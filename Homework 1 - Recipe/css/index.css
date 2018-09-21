@@ -1,0 +1,122 @@
+/*Developer: Zhang Weikun 17343155
+css for index.html
+*/
+
+body {
+	background: url(../images/bg.jpg) repeat;
+	font-family: "Georgia", "Garamond";
+}
+
+h1 {
+    height: 140px;
+    background-color: rgba(51, 81, 93,0.9); 
+    border: 5px dotted #1cefa8;  
+    color: #ffffff; 
+}
+
+h1 > img{
+	vertical-align: middle;
+	padding-right: 30px; 
+}
+
+ul{
+	padding-left: 20px;
+	list-style:none; 
+}
+
+li{
+    position: relative;
+    display:inline-block; 
+    width: 200px;
+    height: 60px;
+    line-height:60px;
+    text-align:center; 
+    background-color: rgba(36, 144, 173,0.8);
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+li > a , .button{
+	display:inline-block;
+	width: 200px;
+    height: 60px;
+	line-height:60px;
+	text-decoration:none; 
+	color: #ffffff;
+}
+
+ul li:hover{
+	background-color: rgba(255, 255, 224,0.8); 
+}
+
+ul li:hover a,li:hover .button{
+	color: #415b64; 
+}
+
+#menu {
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	display: none;
+	border:1px solid #87ceeb;
+	line-height: 40px;
+	text-align: left;
+	width: 600px;
+	background:rgba(255, 255, 224,0.8);
+	color:#415b64;
+	border-radius: 5px;
+}
+
+li:hover #menu{
+	display: block;
+}
+
+#main {
+	width: 100%;
+	position: relative;
+}
+
+#container {
+	width: 600px;
+	height: 500px;
+	overflow: hidden;
+	float: left;
+	position: absolute;
+	left: 50%;
+	margin-left: -300px;
+	z-index: -1;
+	margin-bottom: 30px;
+	border: 2px dotted #1cefa8;
+}
+ 
+#photo {
+	width: 3600px;
+	animation: switch 10s ease-out infinite;
+}
+ 
+#photo > img {
+	float: left;
+	width: 600px;
+	height: 500px;
+}
+ 
+@keyframes switch {
+	0%, 10% {
+		margin-left: 0;
+	}
+	16%, 26% {
+		margin-left: -600px;
+	}
+	32%, 42% {
+		margin-left: -1200px;
+	}
+	48%, 58% {
+		margin-left: -1800px;
+	}
+	64%, 74% {
+		margin-left: -2400px;
+	}
+	80%, 100% {
+		margin-left: -3000px;
+	}
+}
