@@ -5,6 +5,10 @@ body{
 	background:url(http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/background.png?version=1&modificationDate=1268896312000); 
 	font-size:8pt;
 	font-family: "Verdana","Tahoma", sans-serif;
+
+}
+
+* {
 	padding:0px;
 	margin:0px;
 }
@@ -36,7 +40,8 @@ h1{
 	width:250px;
 	margin-bottom:0px;
 	background-color: #A2B964;
-	padding-bottom:20px;
+	font-size: 8pt;
+	font-family: "Arial",sans-serif;
 }
 
 #left-central{
@@ -78,88 +83,53 @@ h1{
 }
 
 .comment{
-	background-color:#E1D697;
-	border:2px solid gray;
-	padding:8px;
-	margin: 0px;
+	font-weight: bold;
+    border:2px solid gray;
+    background-color: #E1D697;
+    padding: 8px;
 }
 
-p > img{
-	margin-right:5px;
+p {
+	margin: 0;
+	display: block;
+}
+
+p  img{
+	padding-right:5px;
 	float: left;
-	vertical-align: top;
 }
 
-.comment q {
-	text-align: left;
-	font-weight:bold;
-	font-size:8pt;
+.user {
+	margin-top: 10px;
+    padding-right: 5px;
+    margin-bottom: 3em;
 }
 
+.publication {
+	font-style: italic;
+}
 
+#bottom {
+	float: right;
+	width: 800px;
+	text-align: center;
+	background-color:  #A2B964;
+	margin: 0;
+	padding: 5px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-dl dt{
-	padding-left:10px;
-	padding-right:10px;
+dl {
+	padding:0 10px;
 }
 
 dt{
 	margin-top:1em;
+	font-weight: bold;
 }	
 
-dl dd{
-	margin-left:5em;
+dd{
+	margin-left:4em;
 }
-
-#rightpart dt{
-	font-weight: bold;
-}
-
-.people{
-	margin-left:3px;
-	margin-top: 10px;
-	margin-bottom:40px;
-
-}
-
-.job {
-	font-style: italic;
-}
-
-.gay{
-	float:left;
-}
-
-
-#page{
-	margin-top: 0px;
-}
-
-
-#page p{
-	position:absolute; /*指这个元素直接跟父类（page）的位置是绝对的）*/
-	bottom:0%;
-	text-align:center;
-	background-color:#A2B964;
-	width:800px;
-	padding-top:5px;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-
 
 #check{
 	float:right;
@@ -167,4 +137,3 @@ dl dd{
 	bottom:0;
 	right:0;
 }
-
