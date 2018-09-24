@@ -20,7 +20,7 @@ h1{
 	text-align:center;
 	font-size:24pt;
 	font-weight:bold;
-	font-family:"Verdana",sans-serif;
+	font-family:"Tahoma"，"Verdana",sans-serif;
 }
 
 #content{
@@ -28,30 +28,8 @@ h1{
 	width:800px;
 	border:4px solid gray;
 	margin: 0 auto;
+	overflow: hidden;
 }
-
-#left-title{
-	background:url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000"),repeat-x;
-	vertical-align: bottom;
-	height: 83px;
-}
-
-
-#percent{
-	font-size:48pt;
-	font-weight:bold;
-	font-family: Verdana, Tahoma,sans-serif;
-	color:red;
-	vertical-align: bottom;
-}
-
-
-#total{
-	font-size:8pt;
-	color:white;
-	vertical-align: 100%; /*设置一个元素的垂直对齐*/
-}
-
 
 #right-central{
 	float: right;
@@ -65,27 +43,24 @@ h1{
 	width: 550px;
 }
 
-dl dt{
-	padding-left:10px;
-	padding-right:10px;
+#left-title{
+	background:url("http://my.ss.sysu.edu.cn/wiki/download/attachments/7045968/rottenbackground.png?version=1&modificationDate=1268896385000"),repeat-x;
+	vertical-align: bottom;
+	height: 83px;
 }
 
-dt{
-	margin-top:1em;
+#percent{
+	font-size:48pt;
+	font-weight:bold;
+	font-family: Verdana, Tahoma,sans-serif;
+	color:red;
+	vertical-align: bottom;
 }
 
-dl dd{
-	margin-left:5em;
-}
-
-#rightpart dt{
-	font-weight: bold;
-}
-
-img.icon{
-	margin-bottom:5px;
-	margin-right:5px;
-	float:left;
+#total{
+	font-size:8pt;
+	color:white;
+	vertical-align: 100%; 
 }
 
 #left-comment{
@@ -105,10 +80,52 @@ img.icon{
 .comment{
 	background-color:#E1D697;
 	border:2px solid gray;
-	padding:3px;
+	padding:8px;
 	margin: 0px;
+}
+
+p > img{
+	margin-right:5px;
+	float: left;
+	vertical-align: top;
+}
+
+.comment q {
+	text-align: left;
 	font-weight:bold;
-	font-size:8px;
+	font-size:8pt;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dl dt{
+	padding-left:10px;
+	padding-right:10px;
+}
+
+dt{
+	margin-top:1em;
+}	
+
+dl dd{
+	margin-left:5em;
+}
+
+#rightpart dt{
+	font-weight: bold;
 }
 
 .people{
@@ -150,3 +167,4 @@ img.icon{
 	bottom:0;
 	right:0;
 }
+
