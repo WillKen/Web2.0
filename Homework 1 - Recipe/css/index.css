@@ -56,7 +56,7 @@ ul li:hover a,li:hover .button{
 #menu {
 	position: absolute;
 	left: 0px;
-	top: 80px;
+	top: 76px;
 	display: none;
 	border:1px solid #87ceeb;
 	line-height: 40px;
