@@ -3,7 +3,6 @@ html,body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 }
 
 #at-plus-container {
@@ -15,20 +14,22 @@ html,body {
 
 #bottom-positioner {
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	width: 100%;
 }
 
 #info-bar {
 	position: absolute;
-	width: 26px;
-	height: 26px;
-	bottom: 97px;
-	left: 77px;
+	width: 25px;
+	height: 25px;
+	bottom: 100px;
+	left: 80px;
 	border-radius: 50%;
-	background-color: #7E7E7E;
+	background-color: #7e7e7e;
 	transition: all 0.5s;
+	/*使元素透明 并置于最底层 这样鼠标移到info-bar机器子元素位置时不会触发button的hover*/
 	opacity: 0; 
+	z-index: -1;    
 }
 
 #button:hover #info-bar {
@@ -36,7 +37,9 @@ html,body {
 	height: 130px;
 	bottom: 150px;
 	left: 25px;
+	/*元素显示*/
 	opacity: 1;
+	z-index: 1;
 }
 
 #control-ring-container { 
@@ -46,25 +49,32 @@ html,body {
 	bottom: 20px;
 	left: 0;
 	border-radius: 50%;
+	/*使元素置于最底层 这样鼠标移到control-ring-container位置时不会触发button的hover*/
+	z-index: -1;
 }
 
 #button {
 	width: 70px;
 	height: 70px;
-	/*margin: 70px 70px;*/
+	/*margin: 100px;*/
 }
 
 #button .apb {
 	position: absolute;
-	width: 26px;
-	height: 26px;
-	bottom: 97px;
-	left: 77px;
+	width: 25px;
+	height: 25px;
+	bottom: 100px;
+	left: 80px;
 	border-radius: 50%;
 	background: url('assets/images/atplus_white.png') center no-repeat;
-	background-size: 20px 15px;
+	background-size: 20px;
 	background-color: #989FCF;
 	transition: all 0.5s;
+}
+
+#button:hover #control-ring-container{
+	/*元素显示 这样鼠标可以移动到control-ring-container 而不使button恢复初始状态*/
+	z-index: 1;
 }
 
 #button:hover .apb {
@@ -73,7 +83,7 @@ html,body {
 	bottom: 85px;
 	left: 65px; 
 	background: url('assets/images/atplus_green.png') center no-repeat;
-	background-size: 40px 30px;
+	background-size: 40px;
 	background-color: #303F9F;
 }
 
@@ -81,79 +91,77 @@ html,body {
 	list-style: none;
 	position: absolute;
 	display: block;
-	width: 32px;
-	height: 32px;
-	margin-top: 60px;
-	margin-left: 35px;
+	width: 30px;
+	height: 30px;
+	margin: 60px 0 0 35px;
 	border-radius: 50%;
-	background: #686868 center no-repeat;
-	background-size: 18px 18px;
+	background: #676767 center no-repeat;
+	background-size: 20px;
 	transition: all 0.5s;
 	opacity: 0;
 }
 
 #button:hover #control-ring li {
+	/*元素显示 这样鼠标可以移动到control-ring及其子元素位置时 不使button恢复初始状态*/
 	opacity: 1;
 }
 
+/*列表中元素位置的设定*/
+
 #button:hover #control-ring li:nth-child(1) {
-	margin-top: 20px;
-	margin-left: -30px;
+	margin: 20px 0 0 -30px;
 	background-image: url('assets/images/nomask.png');
 }
 
 
 #button:hover #control-ring li:nth-child(2) {
-	margin-top: 60px;
-	margin-left: -40px;
+	margin: 60px 0 0 -40px;
 	background-image: url('assets/images/history.png');
 }
 
 #button:hover #control-ring li:nth-child(3) {
-	margin-top: 102px;
-	margin-left: -26px;
+	margin: 100px 0 0 -26px;
 	background-image: url('assets/images/message.png');
 }
 
 #button:hover #control-ring li:nth-child(4) {
-	margin-top: 129px;
-	margin-left: 12px;
+	margin: 130px 0 0 12px;
 	background-image: url('assets/images/setting.png');
 }
 
 #button:hover #control-ring li:nth-child(5) {
-	margin-top: 128px;
-	margin-left: 60px;
+	margin: 128px 0 0 60px;
 	background-image: url('assets/images/signin.png');
 }
 
+/*未读消息处理*/
+
 #control-ring li span.unread {
 	position: absolute;
-	top: -2px;
+	/*小红点的定位*/
+	top: -5px;            
 	right: -10px;
-	display: block;
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background-color: red;
-	color: #E0D6DC;
-	box-sizing: border-box;
+	background-color: #ff3a2f;
+	color: #facfc1;
 	line-height: 20px;
 	text-align: center;
 }
 
+/*info-bar 列表处理*/
+
 #info-bar ul {
-	margin: 0;
-	padding: 0;
+	margin: 0 auto;
+	padding-left:0;
 }
 
 #info-bar li {
 	list-style: none;
 	width: 100%;
-	margin-top: 5px;
-	margin-bottom: 10px;
+	margin: 5px 0 10px 0;
 	text-align: center;
-	margin-left: 0;
 	color: #ffffff;
 }
 
@@ -162,19 +170,25 @@ html,body {
 }
 
 #info-bar li span {
-	margin-left: 8px;
+	margin-left: 10px;
 }
 
 #info-bar li.mine {
 	display: inline-block;
 	width: 50%;
-	color: #26E79E;
+	color: #22d991;
+	font-weight: bold;
 	box-sizing: border-box;
 }
 
 #info-bar li.posted {
-	padding-left: 15px;
+	padding-left: 20px;
 }
+
+#info-bar li.like {
+	padding-right: 10px;
+}
+
 
 #info-bar li.comment {
 	font-size: 25px;
