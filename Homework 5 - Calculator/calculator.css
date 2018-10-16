@@ -1,0 +1,68 @@
+/*17343155 张伟焜*/
+* {
+	font-size: 16pt;
+	font-weight: normal;
+	font-family: "Arial",sans-serif;
+}
+
+body{
+	background-image:url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539589695484&di=b5410cd2c379d8ccdcc68b1f7b1b7d94&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fblog%2F201407%2F31%2F20140731015719_P5fya.jpeg");
+	background-size:100% 100%;
+	/*background-repeat: no-repeat;*/
+}
+
+h1 {
+	text-align: center;
+	font-size: 20pt;
+	color: #000000;
+	font-weight: bold;
+}
+
+#calculator {
+	border:5px solid black;
+	background-color: #b7dbd5;
+	border-radius: 5%;
+	width: 350px;
+	height: 400px;
+	padding: 5px;
+	margin: auto;
+}
+
+#screen {
+	margin-top: 25px;
+	height: 65px;
+	width: 90%;
+	text-align: center;
+	border: 3px dashed gray;
+	border-radius: 10px;
+	margin-left: 15px;
+}
+
+ #input, #output {
+	width: 310px;
+	height: 30px;
+	border: 0px;
+	text-align: right;
+}
+
+#button {
+	height: 300px;
+	padding-left: 10px;
+	margin-top: 30px;
+}
+
+.button {
+	width: 75px;
+	height: 45px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+	border-radius: 10px;
+	color:#b7dbd5;
+	background-color: #45b0bf;
+}
+
+.button:hover {
+	background-color: white;
+	color:#45b0bf;
+}
