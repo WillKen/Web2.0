@@ -1,5 +1,24 @@
 // 17343155 张伟焜
 
+
+
+
+
+
+
+
+//说明：
+	// 我的计算也是使用了eval()函数；
+	// 之所以代码这么长，是因为我想把可能出现的错误都想出来，让它针对不同的错误进行有针对的报错：
+	// 比如没有左操作数，没有有操作数，括号个数不一致等等
+	// 最后实现eval 还加入了try 和catch 的异常处理 把我没有考虑到的bug 进行alert
+
+
+
+
+
+
+
 var formula = "";
 var answer = "";
 
@@ -100,6 +119,22 @@ window.onload = function() {
 	}
 	//开始运算
 	document.getElementById("equal").onclick = function(){
+
+
+
+
+//说明：
+	// 我的计算也是使用了eval()函数；
+	// 之所以代码这么长，是因为我想把可能出现的错误都想出来，让它针对不同的错误进行有针对的报错：
+	// 比如没有左操作数，没有有操作数，括号个数不一致等等
+	// 最后实现eval 还加入了try 和catch 的异常处理 把我没有考虑到的bug 进行alert
+
+
+
+
+
+
+
 		//非法操作:
 		//没有输入左操作数,允许开头出现 “-”
 		if(formula[0] == '+' || formula[0] == '*' || formula[0] == '/'){
@@ -189,7 +224,7 @@ window.onload = function() {
 				alert("Something unexpected. Check your input!!");
 			}
 			
-		}
+		}		
 	}											
 }
 
@@ -208,6 +243,9 @@ function ini(){
 		answer="";
 		document.getElementById("output").value = answer;
 	}
+	if(formula.length>25){
+		alert("The operand is so large!");
+	}
 }
 //在输入过程中，将公式显示出来，output栏清空
 function display(){
@@ -219,6 +257,6 @@ function display(){
 function erase(){
 	formula = "";
 	answer = "";
-	document.getElementById("input").value = "";
+	document.getElementById("input").value = "0";
 	document.getElementById("output").value = "";
 }

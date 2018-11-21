@@ -1,0 +1,51 @@
+<!-- 17343155 张伟焜 -->
+
+
+
+<!-- 设计思路：（针对gameaera子元素div） 
+	id="picN" 表示第N块图案（N为1~15）,其中“blank”表示空白。 即用id记录div的图片样式
+	class="pic/blank rowX colY" 表示该div的显示位置在第X行第Y列（X，Y均为0~3）。 即用class记录div的显示位置。
+	pos[x][y],二维数组，它的值为1~15，用以创建随机位置，并用来判断最终是否完成拼图，注意：pos[x][y]始终与该位置(x行y列)的div的id相同。
+	
+	初始化：
+		产生16个div,15个pic,1个blank,初始id,class,pos[][]。
+	拼图块打乱原理：
+		产生随机数。如，针对第一块，产生1~15的随机数，将随机数指向的拼图块的id和pos[][]与第一块交换；第二块，第三块以此类推。
+	拼图移动原理：
+		点击图片时，判断其显示位置是否与空白显示位置相邻，若相邻则能移动，交换空白显示位置和此图片的显示位置。(交换pos[][]和class)
+		注：id不变，因为变了显示位置，所以不需要再变图片内容。若采用不改变显示位置(不交换class)，只改变图片内容(只交换id),则在移动时，会出现图片闪烁，影响用户体验。
+	拼图恢复原理：
+		首先pos[][]恢复，即依次赋值1~15，最后一块是空白，记为0。
+		接着，读取第0行第0列的div,修改其class和id；接着第0行第1列，以此类推。 -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Fifteen Puzzle</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="puzzle.css">
+	<script src="puzzle.js"></script>
+</head>
+<body>
+	<div id = "container">
+		<div id="head">
+			<h1>Fifteen Puzzles</h1>
+			<div id = "information">Press "start" to do the puzzle!</div>
+		</div>
+		<div id = "left-bar">		
+			<h2 id="info-time">TIME</h2>
+			<input id = "time" disabled = "disabled">
+			<h2 id="info-step">STEPS</h2>
+			<input id = "step" disabled = "disabled">
+			<h2 id="info-picture">PICTURE</h2>
+			<div id="picture"></div>
+		</div>
+		<div id = "gamearea"></div>
+		<button class="button" id="start">start</button>
+		<button class="button" id="recover">Recover</button>
+	</div>
+</body>
+</html>

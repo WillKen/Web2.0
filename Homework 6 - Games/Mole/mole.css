@@ -1,0 +1,96 @@
+/*17343155 张伟焜*/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background:url(http://imgsrc.baidu.com/imgad/pic/item/bba1cd11728b4710eb4fa2f7c8cec3fdfc0323ac.jpg);
+}
+#position{
+	width:100%;
+	position: relative;
+}
+h1, h2 {
+	text-align: center;
+	font-family: "Century Gothic", "Futura", "Verdana", sans-serif;
+	font-weight: normal;
+}
+#info {
+	text-align: center;
+}
+#SS, #state {
+	background-color: white;
+}
+#time, #score {
+	display: inline;
+	vertical-align: middle;
+}
+#time {
+	margin-left: 45px;
+}
+#score {
+	margin-left: 5px;
+}
+#state{
+	margin-left:12px;
+	width:148px;
+	margin-right:40px;
+}
+#timeoutput, #scoreoutput {
+	background-color: white;
+	width: 30px;
+	margin-bottom: 10px;
+}
+
+#scoreoutput {
+	margin-bottom: 40px;
+}
+#gamePart {
+	border-top: 2px solid gray;
+	border-bottom: 2px solid gray;
+	overflow: hidden;
+	margin: auto;
+	width: 590px;
+	height: 360px;
+	background-color: rgba(238, 234, 222,0.8);
+}
+.hole {
+	width: 45px;
+	height: 45px;
+	margin: 6px;
+	border-radius: 50%;
+	float: left;
+	border: 1px solid gray;
+}
+.change {
+	cursor: crosshair;
+}
+#appear {
+	background-image: url("./images/mice.png");
+	background-size: 60px,60px;
+	background-position: center;
+}
+
+#sure {
+	background-image: url("./images/die.png");
+	background-color: rgba(0,225,0,0.7);
+	background-size: 100px,100px;
+	background-position: center;
+}
+#wrong{
+	background-color: rgba(225,0,0,0.7);
+}
+#bottom-info {
+	margin:0 auto;
+	width: 590px;
+	height: 100px;
+}
+p, ol {
+	font-family: "Century Gothic", "Futura", "Verdana", sans-serif;
+	font-weight: bold;
+}
+
+ol{
+padding-left: 40px;
+font-weight: normal;
+}

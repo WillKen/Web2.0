@@ -1,0 +1,129 @@
+/*17343155 张伟焜*/
+
+body{
+	background-image:url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540375579805&di=a7fa6256881654b39e95d4846fa2706d&imgtype=0&src=http%3A%2F%2Fwww.jituwang.com%2Fuploads%2Fallimg%2F130906%2F259962-130Z60Z42753.jpg");
+	/*background-size:100% 100%;*/
+}
+#head-info {
+	position: relative;
+	text-align: center;
+	font-family: "Century Gothic";
+	font-size: 22px;
+}
+#heading {
+	font-size: 30px;
+	font-weight: normal;
+}
+#result {
+	height: 30px;
+	opacity: 1;
+}
+.result {
+	height: 30px;
+	opacity: 0;
+}
+.resultShow {
+	height: 30px;
+	color: black;
+	transition: 1s;
+	opacity: 1;
+}
+#gamePart {	
+	position: relative;
+	height: 290px;
+	width: 465px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	margin-top: 20px;
+	background-color: rgba(0,0,0,0.5);
+}
+#walls div{
+	position: absolute;
+	cursor:default;
+}
+#wall1, #wall4 {
+	width: 465px;
+	height: 50px;
+	border: black solid 1px;
+}
+#wall4 {
+	bottom: -1.5px;
+}
+#wall2, #wall3 {
+	height: 140px;
+	width: 140px;
+	top:51px;
+	border-left: black solid 1px;
+	border-right: black solid 1px;
+	border-bottom: black solid 1px;
+	border-top:none;
+}
+#wall2 {
+	left:0px;
+}
+#wall3 {
+	right:-2px;
+}
+#wall5 {
+	height: 140px;
+	width: 90px;
+	bottom: 50px;
+	left:188px;
+	border-left: black solid 1px;
+	border-right: black solid 1px;
+	border-top: black solid 1px;
+
+}
+.red {
+	background-color: rgba(215, 94, 82,1);
+	transition: 0.3s;
+}
+.grey{
+	background-color: rgba(222, 225, 230,1);
+	transition: 0.3s;
+}
+#mark div {
+	outline: black solid 1px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	vertical-align: bottom;
+}
+#start, #end {
+	font-family: "Arial";
+	font-size: 30px;
+	font-weight: bold;
+	
+	top: 195px;
+	position: absolute;
+}
+#start p, #end p {
+	position: relative;
+	bottom: 28px;
+}
+#start {
+	left: 1px;
+	background-color: #83FF82;
+}
+#end {
+	right: -1px;
+	background-color: #8784FF;
+}
+#Wall {
+	width: 100px;
+	height: 30px;
+	background-color: rgba(222, 225, 230,1);
+	border: black solid 1px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tail-info {
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 550px;
+	font-family: "Century Gothic";
+	font-size: 15px;
+}

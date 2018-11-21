@@ -1,0 +1,241 @@
+/*17343155 张伟焜*/
+
+
+
+
+/*设计思路：（针对gameaera子元素div） 
+	id="picN" 表示第N块图案（N为1~15）,其中“blank”表示空白。 即用id记录div的图片样式
+	class="pic/blank rowX colY" 表示该div的显示位置在第X行第Y列（X，Y均为0~3）。 即用class记录div的显示位置。
+	pos[x][y],二维数组，它的值为1~15，用以创建随机位置，并用来判断最终是否完成拼图，注意：pos[x][y]始终与该位置(x行y列)的div的id相同。
+	
+	初始化：
+		产生16个div,15个pic,1个blank,初始id,class,pos[][]。
+	拼图块打乱原理：
+		产生随机数。如，针对第一块，产生1~15的随机数，将随机数指向的拼图块的id和pos[][]与第一块交换；第二块，第三块以此类推。
+	拼图移动原理：
+		点击图片时，判断其显示位置是否与空白显示位置相邻，若相邻则能移动，交换空白显示位置和此图片的显示位置。(交换pos[][]和class)
+		注：id不变，因为变了显示位置，所以不需要再变图片内容。若采用不改变显示位置(不交换class)，只改变图片内容(只交换id),则在移动时，会出现图片闪烁，影响用户体验。
+	拼图恢复原理：
+		首先pos[][]恢复，即依次赋值1~15，最后一块是空白，记为0。
+		接着，读取第0行第0列的div,修改其class和id；接着第0行第1列，以此类推。*/
+
+
+
+
+body { 
+	background-image: url(image/t.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	}
+/*使用container便于定位*/
+#container{
+	width: 700px;
+	height: 700px;
+	margin: auto auto;
+	margin-top: 5px;
+	background-color: #dee1e6;
+	background: hsla(0,0%,100%,.4);
+	border-radius: 5%;
+	box-shadow: 5px 5px 30px #666666;
+}
+/*大标题*/
+h1{
+	color: #09040a;
+	font-weight: bold;
+	font-size: 50px;
+	padding-top:10px;
+	margin: auto auto;
+	text-align: center;
+}
+/*游戏信息的显示*/
+#information{
+	width: 500px;
+	height: 60px;
+	margin: auto ;
+	color: #09040a;
+	font-size: 30px;
+	overflow: hidden;
+	text-align: center;
+}
+/*左侧信息栏*/
+#left-bar{
+	float:left;
+	margin-left: 20px;
+}
+
+h2 {
+	position: relative;
+	font-size: 20px;
+}
+
+#info-time{
+	position: relative;
+	margin-left: 25px;
+}
+
+#info-step{
+	position: relative;
+	margin-left: 20px;
+}
+
+#info-picture{
+	position: relative;
+	margin-left: 10px;
+}
+
+#time{
+	text-align: center;
+	position:relative;
+	width:100px;
+	background: hsla(0,0%,100%,.3);
+	border:none;
+	font-size: 20px;
+}
+
+#step{
+	text-align: center;
+	position:relative;
+	width:100px;
+	background: hsla(0,0%,100%,.3);
+	border:none;
+	font-size: 20px;
+}
+
+#picture {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	background-image: url("image/timg.jpg");
+	background-size: 100px 100px;
+	border-radius: 5%;
+}
+/*拼图区域*/
+#gamearea {
+	width: 400px;
+	height: 400px;
+	margin: auto;
+	position: relative;
+}
+/*开始按钮*/
+#start {
+	width: 100px;
+	height: 30px;
+	font-size: 20px;
+	margin-left: 200px;
+	margin-top: 60px;
+	font-family:Century Gothic, Futura, Verdana, sans-serif;
+	border-radius: 10px;
+	border: 2px solid #5cacac;
+}
+/*恢复按钮*/
+#recover {
+	width: 100px;
+	height: 30px;
+	font-size: 20px;
+	margin-left: 100px;
+	margin-top: 60px;
+	font-family:Century Gothic, Futura, Verdana, sans-serif;
+	border-radius: 10px;
+	border: 2px solid #5cacac;
+}
+/*每一个图片块*/
+.pic {
+	width: 100px;
+	height: 100px;
+	background-image: url("image/timg.jpg");
+	background-size: 400px 400px;
+	position: absolute;
+	transition: 0.1s linear;
+}
+
+.pic:hover {
+	transform: scale(1.02,1.02);
+}
+
+.button {
+	outline: none;
+	background: hsla(0,0%,100%,.3);
+}
+.button:hover {
+	transform: scale(1.05,1.05);
+}
+/*空白块*/
+.blank {
+	width: 100px;
+	height: 100px;
+	margin: 2px;
+	position: absolute;
+	background:none;
+}
+/*行1~4位置*/
+.row0 {
+	top: 0px;
+}
+.row1 {
+	top: 101px;
+}
+.row2 {
+	top: 202px;
+}
+.row3 {
+	top: 303px;
+}
+/*列1~4位置*/
+.col0 {
+	left: 0px;
+}
+.col1 {
+	left: 101px;
+}
+.col2 {
+	left: 202px;
+}
+.col3 {
+	left: 303px;
+}
+/*图片定位（相当于把大图片分割成16份）*/
+#pic1 {
+	background-position: 0px 0px;
+}
+#pic2 {
+	background-position: -100px 0px;
+}
+#pic3 {
+	background-position: -200px 0px;
+}
+#pic4 {
+	background-position: -300px 0px;
+}
+#pic5 {
+	background-position: 0px -100px;
+}
+#pic6 {
+	background-position: -100px -100px;
+}
+#pic7 {
+	background-position: -200px -100px;
+}
+#pic8 {
+	background-position: -300px -100px;
+}
+#pic9 {
+	background-position: 0px -200px;
+}
+#pic10 {
+	background-position: -100px -200px;
+}
+#pic11 {
+	background-position: -200px -200px;
+}
+#pic12 {
+	background-position: -300px -200px;
+}
+#pic13 {
+	background-position: 0px -300px;
+}
+#pic14 {
+	background-position: -100px -300px;
+}
+#pic15 {
+	background-position: -200px -300px;
+}
