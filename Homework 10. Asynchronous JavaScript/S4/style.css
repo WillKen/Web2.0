@@ -1,0 +1,184 @@
+/*17343155 张伟焜*/
+html,body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#at-plus-container {
+	/*父类元素相对定位*/
+	position: relative;
+	width: 180px;
+	height: 100%;
+	margin:  auto;
+}
+
+#bottom-positioner {
+	/*子类元素绝对定位*/
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+#button {
+	width: 70px;
+	height: 70px;
+}
+
+#info-bar {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	bottom: 100px;
+	left: 80px;
+	border-radius: 50%;
+	background-color: gray;
+	transition: all 0.5s;
+	/*使元素透明 并置于最底层 这样鼠标移到info-bar及其子元素位置时不会触发button的hover*/
+	opacity: 0; 
+	z-index: -1; 
+	overflow: hidden;  
+}
+
+#button:hover #info-bar {
+	width: 130px;
+	height: 130px;
+	bottom: 150px;
+	left: 25px;
+	border-radius: 50%;
+	background-color: gray;
+	/*元素显示*/
+	opacity: 1;
+	z-index: 1;
+}
+
+#sum {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	top: 36%;
+	left: 36%;
+	font-size: 35px;
+	color: white;
+	background-color: rgba(ff,ff,ff,0);
+}
+
+#control-ring-container { 
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	bottom: 20px;
+	left: 0;
+	border-radius: 50%;
+	/*使元素置于最底层 这样鼠标移到control-ring-container位置时不会触发button的hover*/
+	z-index: -1;
+}
+
+#button:hover #control-ring-container{
+	/*元素显示 这样鼠标可以移动到control-ring-container 而不使button恢复初始状态*/
+	z-index: 1;
+}
+
+#control-ring-container li {
+	list-style: none;
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	margin: 60px 0 0 35px;
+	border-radius: 50%;
+	background: #676767 center no-repeat;
+	background-size: 20px;
+	transition: all 0.5s;
+	opacity: 0;
+}
+
+#button:hover #control-ring li {
+	/*元素显示 这样鼠标可以移动到control-ring及其子元素位置时 不使button恢复初始状态*/
+	opacity: 1;
+}
+
+/*列表中元素位置的设定*/
+
+#button:hover #control-ring li:nth-child(1) {
+	margin: 20px 0 0 -30px;
+}
+
+
+#button:hover #control-ring li:nth-child(2) {
+	margin: 60px 0 0 -40px;
+}
+
+#button:hover #control-ring li:nth-child(3) {
+	margin: 100px 0 0 -26px;
+}
+
+#button:hover #control-ring li:nth-child(4) {
+	margin: 130px 0 0 12px;
+}
+
+#button:hover #control-ring li:nth-child(5) {
+	margin: 128px 0 0 60px;
+}
+
+#button #control-ring li {
+	text-align: center;
+	line-height: 30px;
+	background-color: blue;
+	color: white;
+}
+
+/*未读消息处理*/
+
+#control-ring li span.unread {
+	position: absolute;
+	/*小红点的定位*/
+	top: -5px;            
+	right: -10px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #ff3a2f;
+	color: #facfc1;
+	line-height: 20px;
+	text-align: center;
+}
+
+/*abp类(图标)的设定*/
+
+#button .apb {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	bottom: 100px;
+	left: 80px;
+	border-radius: 50%;
+	background: url('assets/images/atplus_white.png') center no-repeat;
+	background-size: 20px;
+	background-color: #919acc;
+	transition: all 0.5s;
+}
+
+#button:hover .apb {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 85px;
+	left: 65px; 
+	background: url('assets/images/atplus_green.png') center no-repeat;
+	background-size: 40px;
+	background-color: #3138a5;
+}
+
+#letter {
+	position: absolute;
+	height: 20px;
+	width: 100px;
+	top: 20%;
+	left: 10%;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}

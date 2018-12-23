@@ -1,0 +1,125 @@
+/*17343155 张伟焜*/
+
+* {
+	font-family: Courier New,Century Gothic, Futura, Verdana, sans-serif;
+	
+}
+
+body {
+	background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543301846326&di=33f46169f2b74b28b6c5f9758ac5baa4&imgtype=0&src=http%3A%2F%2Fimg4q.duitang.com%2Fuploads%2Fitem%2F201502%2F25%2F20150225090956_vtCaX.thumb.700_0.jpeg);
+}
+
+
+h1 {
+	font-size:50px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 70px;
+}
+
+.container {
+	width:300px;
+	height:230px;
+	margin:auto;
+	margin-top: 50px;
+	display: table;
+}
+
+.position {
+	position:relative;
+	margin:auto;
+	display: table;
+	border-radius: 10px;
+	box-shadow: 5px 5px 3px #888888;
+	width: 950px;
+	height: 400px;
+	background-color: rgba(240,240,240,0.8);
+}
+
+div.username{
+	margin-left: 290px;
+	margin-top: 90px;
+	font-size: 20px;
+}
+
+#username{
+	font-size: 20px;
+	width: 200px;
+}
+
+div.sid{
+	margin-left: 290px;
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+#sid{
+	margin-left:40px;
+	font-size: 20px;
+	width: 200px;
+}
+
+div.phone{
+	margin-left: 290px;
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+#phone{
+	margin-left:40px;
+	font-size: 20px;
+	width: 200px;
+}
+
+div.email{
+	margin-left: 290px;
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+#email{
+	margin-left:40px;
+	font-size: 15px;
+	width: 200px;
+}
+
+.error{
+	font-size:15px;
+	color:red;
+}
+
+#unique{
+	position: absolute;
+	color:red;
+	top:10px; 
+	left: 300px;
+}
+
+.buttons {
+	margin-top: 50px;
+	margin-left: 350px;
+	outline:none;
+}
+
+input.button{
+	font-size: 20px;
+}
+
+input{
+	margin-left: 20px;
+	border-radius:5px;
+	outline:none;
+}
+
+p{
+	font-size: 20px;
+}
+
+div.detail{
+	margin-top:110px;
+	margin-left: 350px;
+}
+
+.hide{
+	display: none;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "signup",
+  "version": "1.0.0",
+  "description": "a simple signup system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zhang Weikun 17343155",
+  "license": "ISC",
+  "dependencies": {
+    "jade": "^1.11.0"
+  }
+}
